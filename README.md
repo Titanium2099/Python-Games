@@ -20,3 +20,17 @@ There are currently 2 games that you can play:
 2. Make your changes
 3. Make a pull request
 4. Wait for it to be reviewed
+
+## How to report a bug
+1. Go to the issues tab
+2. Click on new issue
+3. Describe the bug
+4. Wait for it to be reviewed
+
+## How to request a feature
+1. Go to the issues tab
+2. Click on new issue
+3. Describe the feature
+4. Wait for it to be reviewed
+5. if you want to implement the feature yourself, make a pull request
+
