@@ -12,7 +12,12 @@ def drop_piece(board, row, col, piece):
     board[row][col] = piece
 
 def is_valid_location(board, col): #check if the player's requested move is valid
-    return board[ROW_COUNT-1][col] == 0
+    #check if the top row in the column is empty
+    if board[ROW_COUNT - 1][col] != 0:
+        print("That column is full. Try again.")
+        return False
+    else:
+        return board[ROW_COUNT-1][col] == 0
 
 def get_next_open_row(board, col): #get the next open row in the column
     for r in range(ROW_COUNT):
@@ -89,11 +94,11 @@ def connect_4(): #  main function
             print("Player 1's turn")
             col = input("Make your selection (1-7): ")
             #check if the input is a number
-            if not col.isdigit():
+            if not col.isdigit(): #to avoid errors, check if the input is a number
                 print("Invalid input!")
                 continue
-            col = int(col)
-            col -= 1
+            col = int(col) #turn the input into an integer
+            col -= 1 #subtract 1 to account for 0 indexing
             #check if number is in range
             if col < 0 or col > 6:
                 print("Invalid input!")
