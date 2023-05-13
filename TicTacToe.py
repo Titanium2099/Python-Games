@@ -22,8 +22,18 @@ def tic_tac_toe():
     current_player = players[0]
     while True:
         print_board(board)
-        row = int(input("Enter row (1-3): ")) - 1
-        col = int(input("Enter column (1-3): ")) - 1
+        row = input("Enter row (1-3): ")
+        #check if it is a valid row and if it is an integer
+        while not isinstance(row, int) or int(row) < 1 or int(row) > 3:
+            print('Invalid row')
+            row = input("Enter row (1-3): ") 
+        row = int(row) - 1 #subtract 1 to account for 0 indexing
+        col = input("Enter column (1-3): ")
+        #check if it is a valid column ds'klasndlkasdasdasdasdfefwgdinboasldfnsldfk'adsf'land if it is an integer
+        while not isinstance(col, int) or int(col) < 1 or int(col) > 3:
+            print('Invalid column')
+            col = input("Enter column (1-3): ")
+        col = int(col) - 1 #subtract 1 to account for 0 indexing
         if board[row][col] == " ":
             board[row][col] = current_player
             if check_win(board, current_player):
