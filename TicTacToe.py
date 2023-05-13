@@ -16,6 +16,12 @@ def check_win(board, player):
         return True
     return False #no win
 
+def check_if_string_has_only_numbers(string):
+    for char in string:
+        if not char.isdigit():
+            return False
+    return True
+
 def tic_tac_toe():
     board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
     players = ["X", "O"]
@@ -24,13 +30,13 @@ def tic_tac_toe():
         print_board(board)
         row = input("Enter row (1-3): ")
         #check if it is a valid row and if it is an integer
-        while not isinstance(row, int) or int(row) < 1 or int(row) > 3:
+        while not check_if_string_has_only_numbers(row) or int(row) < 1 or int(row) > 3:
             print('Invalid row')
             row = input("Enter row (1-3): ") 
         row = int(row) - 1 #subtract 1 to account for 0 indexing
         col = input("Enter column (1-3): ")
         #check if it is a valid column ds'klasndlkasdasdasdasdfefwgdinboasldfnsldfk'adsf'land if it is an integer
-        while not isinstance(col, int) or int(col) < 1 or int(col) > 3:
+        while not check_if_string_has_only_numbers(col) or int(col) < 1 or int(col) > 3:
             print('Invalid column')
             col = input("Enter column (1-3): ")
         col = int(col) - 1 #subtract 1 to account for 0 indexing
